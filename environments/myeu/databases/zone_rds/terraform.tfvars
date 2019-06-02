@@ -1,0 +1,7 @@
+zone_id_private = "Z3xxxxxxxx"
+zone_id_public  = "Z40ZXH8LYX9EU"
+aws_account_id  = "8888xxxxx"
+name    = "zonedb"
+username = "postgres"
+password = "postgres"
+identifier  = "my-eu-zonedb-rds"

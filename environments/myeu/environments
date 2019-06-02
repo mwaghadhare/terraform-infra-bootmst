@@ -1,0 +1,152 @@
+{
+  "java": {
+    "install_flavor": "oracle",
+    "jdk_version": 8,
+    "set_default": true,
+    "oracle": {
+      "accept_oracle_download_terms": true
+    }
+  },
+  "mesos": {
+    "version": "1.0.1",
+    "master": {
+      "flags": {
+        "cluster": "mesos-eu",
+        "zk": "zk://zookeeper-000-eu.my.pvt:2181,zookeeper-001-eu.my.pvt:2181,zookeeper-002-eu.my.pvt:2181/mesos"
+      }
+    },
+    "slave": {
+      "flags": {
+        "master": "zk://zookeeper-000-eu.my.pvt:2181,zookeeper-001-eu.my.pvt:2181,zookeeper-002-eu.my.pvt:2181/mesos"
+      }
+    }
+  },
+  "consul": {
+    "version": "0.8.2",
+    "config": {
+      "start_join": [
+        "mesos-master-000-eu.my.pvt",
+        "mesos-master-001-eu.my.pvt",
+        "mesos-master-002-eu.my.pvt"
+      ]
+    }
+  },
+  "marathon": {
+    "version": "1.1.1",
+    "flags": {
+      "master": "zk://zookeeper-000-eu.my.pvt:2181,zookeeper-001-eu.my.pvt:2181,zookeeper-002-eu.my.pvt:2181/mesos",
+      "zk": "zk://zookeeper-000-eu.my.pvt:2181,zookeeper-001-eu.my.pvt:2181,zookeeper-002-eu.my.pvt:2181/marathon"
+    }
+  },
+  "riemann": {
+    "download": {
+      "version": "0.2.10"
+    },
+    "host": "monitor-000-eu.my.pvt",
+    "port": "5555",
+    "graphite": {
+      "hostname": "graphite-000-eu.my.pvt"
+    },
+    "domain": "my.com"
+  },
+  "storm": {
+    "nimbus": {
+      "hosts": "nimbus-000-eu.my.pvt",
+      "host": "nimbus-000-eu.my.pvt"
+    },
+    "zookeeper": {
+      "hosts": [
+        "zookeeper-000-eu.my.pvt",
+        "zookeeper-001-eu.my.pvt",
+        "zookeeper-002-eu.my.pvt"
+      ]
+    }
+  },
+  "kafka": {
+    "version": "0.10.1.1",
+    "scala_version": "2.11",
+    "md5_checksum": "c32c75ff9b23cd6b64717f9eb5b4eb87",
+    "checksum": "1540800779429d8f0a08be7b300e4cb6500056961440a01c8dbb281db76f0929"
+  },
+  "my_kafka": {
+    "zookeepers_cnames": "zookeeper-000-eu.my.pvt,zookeeper-001-eu.my.pvt,zookeeper-002-eu.my.pvt"
+  },
+  "cassandra": {
+    "config": {
+      "cluster_name": "cassandra-eu"
+    },
+    "seeds": [
+      "cassandra-000-eu.my.pvt"
+    ]
+  },
+  "cassandra-v3": {
+    "config": {
+      "cluster_name": "cassandra-v3-eu"
+    },
+    "seeds": [
+      "cassandra-v3-000-eu.my.pvt"
+    ]
+  },
+  "my_praxis": {
+    "environment": "eu"
+  },
+  "system": {
+    "domain": "eu.my.com"
+  },
+  "traefik": {
+    "install": {
+      "version": "1.0.3"
+    },
+    "config": {
+      "endpoint": "mesos-master-002-eu.my.pvt:8080,mesos-master-000-eu.my.pvt:8080,mesos-master-001-eu.my.pvt:8080"
+    }
+  },
+  "citadel": {
+    "bucket": "my-eu-info",
+    "region": "eu-central-1"
+  },
+  "mobilesim": {
+    "version": "3.0.150"
+  },
+  "diamond": {
+    "graphite_server": "graphite-000-eu.my.pvt"
+  },
+  "ebs": {
+    "databags": "eu"
+  },
+  "kong": {
+    "cassandra_url": "cassandra-000-eu.my.pvt,cassandra-001-eu.my.pvt,cassandra-002-eu.my.pvt",
+    "rds-fqdn": "kong-postgres-000-eu.my.pvt",
+    "rds-username": "kong_eu",
+    "rds-password": "XXeuMCXLMxact73h",
+    "rds-database": "kong_eu"
+  },
+  "elasticsearch": {
+    "version": "6.1.1",
+    "config_v5": {
+      "discovery.zen.ping.unicast.hosts": [
+        "elasticsearch-000-eu.my.pvt",
+        "elasticsearch-001-eu.my.pvt",
+        "elasticsearch-002-eu.my.pvt"
+      ]
+    },
+    "config_v5_data": {
+      "discovery.zen.ping.unicast.hosts": [
+        "elasticsearch-000-eu.my.pvt",
+        "elasticsearch-001-eu.my.pvt",
+        "elasticsearch-002-eu.my.pvt"
+      ]
+    }
+  },
+  "kibana": {
+    "version": "6.1.1",
+    "checksum": "86DC1D1B5DDB85063E08BFD9E863F876ED75267D6A629E7A63353A4D26758720",
+    "config": {
+      "elasticsearch.url": "http://elasticsearch-000-eu.my.pvt:9200"
+    }
+  },
+  "my_tardis": {
+    "environment": "eu",
+    "domain": "my.pvt"
+  }
+}

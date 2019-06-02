@@ -1,0 +1,7 @@
+zone_id_private = "Z3xxxxxxxx"
+zone_id_public  = "Z40ZXH8LYX9EU"
+aws_account_id  = "8888xxxxx"
+name    = "kong_eu"
+username = "kong_eu"
+password = "XXeuMCXLMxact73h"
+identifier  = "my-eu-kong-rds"

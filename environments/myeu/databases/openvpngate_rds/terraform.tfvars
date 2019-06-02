@@ -1,0 +1,7 @@
+zone_id_private = "Z3xxxxxxxx"
+zone_id_public  = "Z40ZXH8LYX9EU"
+aws_account_id  = "8888xxxxx"
+name    = "openvpngate"
+username = "openvpngate"
+password = "AEOoiUWraZiOQpSgSGYI5IEy3TlrrB_J"
+identifier  = "my-eu-openvpngate-rds"
